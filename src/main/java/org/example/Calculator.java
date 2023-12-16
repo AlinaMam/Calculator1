@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
 
 public class Calculator {
-    private static final Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
     private static final Logger logger = LogManager.getLogger(Calculator.class);
     public static void main(String[] args) {
         int exit = 1;
@@ -15,26 +15,26 @@ public class Calculator {
             int num2;
             try {
                 System.out.print("Введите число1: ");
-                num1 = SCANNER.nextInt();
+                num1 = scanner.nextInt();
                 logger.info("Введено число1: " + num1);
                 System.out.println("Выберите операцию: " +
                         "1. + " +
                         "2. - " +
                         "3. * " +
                         "4. / ");
-                String line = SCANNER.next();
+                String line = scanner.next();
                 logger.info("Введена операция: " + line);
                 System.out.print("Введите число2: ");
-                num2 = SCANNER.nextInt();
+                num2 = scanner.nextInt();
                 logger.info("Введено число2: " + num2);
                 if (num2 == 0 && line.equals("/")) {
                     System.out.println("На 0 делить нельзя");
                     logger.error("Деление на 0");
                     break;
                 }
-                getResult(num1, num2, line, SCANNER);
+                getResult(num1, num2, line, scanner);
                 System.out.print("Если хочешь продолжить введи 1. Для выхода введи 0: ");
-                exit = SCANNER.nextInt();
+                exit = scanner.nextInt();
                 logger.info("Выбран: " + exit);
             } catch (Exception e) {
                 logger.error("Пользователь ввел некорректное число");
