@@ -9,5 +9,8 @@
         <module name="Calculator1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Calculator1_log4j" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>
